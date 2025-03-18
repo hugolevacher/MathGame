@@ -1,0 +1,243 @@
+/*Texte et body*/
+body {
+    background-image: url("background.jpg");
+    background-repeat: repeat;
+    background-size: 400px;
+    margin: 4vw;
+    color: white;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: larger;
+    color: white;
+    background-color: black;
+    border-radius: 15px;
+    border: solid white 3px;
+    padding: 5px;
+}
+
+h1 {
+    background-color: black;
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+}
+
+#boutoninfo {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    z-index: 101;
+    border: solid black 3px;
+    border-radius: 50px 50px 50px 10px;
+}
+
+#popup {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border: solid black 3px;
+    border-radius: 5px 25px 25px 25px;
+    max-width: 450px;
+    position: fixed;
+    display: none;
+    z-index: 101;
+}
+
+#boutonok {
+    margin-right: 12px;
+    border-radius: 12px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s ease;
+    z-index: 100;
+    /* Ensure the overlay is below the popup but above the rest of the content */
+    pointer-events: none;
+}
+
+#overlay.active {
+    background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: auto;
+}
+
+/*Choix de la difficulte*/
+#lblfacile {
+    color: white;
+    background-color: rgba(0, 67, 6, 1);
+}
+
+#lblfacile.active {
+    background-color: rgba(0, 193, 16, 1);
+    transition: 0.5s ease;
+}
+
+#lblmoyen {
+    color: white;
+    background-color: rgba(66, 61, 0, 1);
+}
+
+#lblmoyen.active {
+    background-color: rgba(214, 217, 0, 1);
+    transition: 0.5s ease;
+}
+
+#lbldifficile {
+    color: white;
+    background-color: rgba(66, 0, 0, 1);
+}
+
+#lbldifficile.active {
+    background-color: rgba(235, 0, 0, 1);
+    transition: 0.5s ease;
+}
+
+.btn-group .btn input[type="radio"] {
+    display: none;
+}
+
+#overlayDiffculty {
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.difficulyBars {
+    font-size: x-small;
+    color: black;
+}
+
+/*Formulaire*/
+.formchoix {
+    background-color: black;
+    border: solid white 3px;
+    border-radius: 15px;
+    padding: 10px;
+    height: fit-content;
+}
+
+@media(min-width:1300px) {
+    .formchoix {
+        width: fit-content;
+    }
+}
+
+/*Ecran de jeu et interieur*/
+#gamescreen {
+    background-color: white;
+    border-radius: 20px;
+    border: solid black 7px;
+    outline: white solid 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+#arithmeticExpression {
+    color: black;
+    font-size: 8vw;
+    display: none;
+    width: fit-content;
+}
+
+#reponseUser {
+    height: 8vw;
+    width: 15vw;
+    font-size: 8vw;
+    margin-left: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: solid black 3px;
+    border-radius: 10px;
+    display: none;
+}
+
+@media(max-width:1000px) {
+    #reponseUser {
+        font-size: 10vw;
+        height: 10vw;
+        width: 22vw;
+    }
+
+    #arithmeticExpression {
+        font-size: 10vw;
+    }
+}
+
+#MessageDebutFin {
+    color: black;
+    font-size: 200%;
+}
+
+#QuestionCourante,
+#scoreActuel,
+#afficherBonneReponseSiErreur {
+    color: black;
+    font-size: larger;
+}
+
+@media(max-width:1300px) {
+    #MessageDebutFin {
+        font-size: 150%;
+    }
+
+    #QuestionCourante,
+    #scoreActuel,
+    #afficherBonneReponseSiErreur {
+        font-size: medium;
+    }
+}
+
+.strikes {
+    color: black;
+    border: solid black;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 150%;
+    font-weight: bolder;
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media(max-width:1300px) {
+    .strikes {
+        font-size: 100%;
+        margin: 1px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+#compteErreur {
+    display: none;
+}
+
+#timerBar {
+    width: 100%;
+    height: 12px;
+    background-color: #FFB200;
+    border: solid black 2px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    display: none;
+}
+
+#timerBar.transition {
+    transition: width 1s linear;
+}
+
+/*Pour ne pas aficher fleches*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
