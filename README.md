@@ -1,2 +1,2 @@
 # MathGame
-## https://jeudecalcul.z27.web.core.windows.net/
+## [hugolevacher.github.io/MathGame/index.html](https://hugolevacher.github.io/MathGame/index.html)
